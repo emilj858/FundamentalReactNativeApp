@@ -76,15 +76,17 @@ export default class ReactNativeFundamentalsCutePics extends Component {
   render() {
     const image = Images[this.state.index]
 
-     return (
+      return (
             <View style={styles.container}>
                 <View style={styles.empty} />
                 <TouchableHighlight onPress={this.nextImage.bind(this)}
-                                    style={styles.image}/>
-                <Image source={{uri: image.uri}}
-                       style={styles.image}
-                       onLayout={this.onImageLayout.bind(this)} />
-                    {/*<Text style={styles.imageLabel}>{image.label}</Text>*/}
+                                    style={styles.image}>
+                    <Image source={{uri: image.uri}}
+                           style={styles.image}
+                           onLayout={this.onImageLayout.bind(this)}>
+                        <Text style={styles.imageLabel}>{image.label}</Text>
+                    </Image>
+                </TouchableHighlight>
                 <View style={styles.empty} />
             </View>
         );
